@@ -4,7 +4,7 @@
 #
 Name     : R-BayesFactor
 Version  : 0.9.12.4.2
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.2.tar.gz
 Summary  : Computation of Bayes Factors for Common Designs
@@ -18,6 +18,7 @@ Requires: R-gtools
 Requires: R-hypergeo
 Requires: R-languageR
 Requires: R-pbapply
+Requires: R-xtable
 BuildRequires : R-RcppEigen
 BuildRequires : R-arm
 BuildRequires : R-coda
@@ -25,6 +26,7 @@ BuildRequires : R-gtools
 BuildRequires : R-hypergeo
 BuildRequires : R-languageR
 BuildRequires : R-pbapply
+BuildRequires : R-xtable
 BuildRequires : clr-R-helpers
 
 %description
@@ -48,11 +50,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530467788
+export SOURCE_DATE_EPOCH=1530485906
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1530467788
+export SOURCE_DATE_EPOCH=1530485906
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
