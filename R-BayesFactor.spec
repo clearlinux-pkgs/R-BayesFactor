@@ -4,20 +4,32 @@
 #
 Name     : R-BayesFactor
 Version  : 0.9.12.4.2
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.2.tar.gz
 Summary  : Computation of Bayes Factors for Common Designs
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-BayesFactor-lib = %{version}-%{release}
+Requires: R-MatrixModels
+Requires: R-Rcpp
+Requires: R-contfrac
+Requires: R-deSolve
+Requires: R-elliptic
+Requires: R-mvtnorm
+BuildRequires : R-MatrixModels
+BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
 BuildRequires : R-arm
 BuildRequires : R-coda
+BuildRequires : R-contfrac
+BuildRequires : R-deSolve
+BuildRequires : R-elliptic
 BuildRequires : R-gtools
 BuildRequires : R-highr
 BuildRequires : R-hypergeo
 BuildRequires : R-languageR
+BuildRequires : R-mvtnorm
 BuildRequires : R-pbapply
 BuildRequires : R-xtable
 BuildRequires : buildreq-R
@@ -44,10 +56,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552714812
+export SOURCE_DATE_EPOCH=1556464849
 
 %install
-export SOURCE_DATE_EPOCH=1552714812
+export SOURCE_DATE_EPOCH=1556464849
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -83,7 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  BayesFactor || :
+R CMD check --no-manual --no-examples --no-codoc BayesFactor || :
 
 
 %files

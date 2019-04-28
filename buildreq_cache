@@ -1,10 +1,16 @@
 0.9.12.4.2
+R-MatrixModels
+R-Rcpp
 R-RcppEigen
 R-arm
 R-coda
+R-contfrac
+R-deSolve
+R-elliptic
 R-gtools
 R-highr
 R-hypergeo
 R-languageR
+R-mvtnorm
 R-pbapply
 R-xtable
