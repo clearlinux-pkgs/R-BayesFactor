@@ -4,13 +4,22 @@
 #
 Name     : R-BayesFactor
 Version  : 0.9.12.4.2
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.2.tar.gz
 Summary  : Computation of Bayes Factors for Common Designs
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-BayesFactor-lib = %{version}-%{release}
+Requires: R-MatrixModels
+Requires: R-Rcpp
+Requires: R-coda
+Requires: R-gtools
+Requires: R-hypergeo
+Requires: R-mvtnorm
+Requires: R-pbapply
+Requires: R-stringi
+Requires: R-stringr
 BuildRequires : R-MatrixModels
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
@@ -25,6 +34,8 @@ BuildRequires : R-hypergeo
 BuildRequires : R-languageR
 BuildRequires : R-mvtnorm
 BuildRequires : R-pbapply
+BuildRequires : R-stringi
+BuildRequires : R-stringr
 BuildRequires : R-xtable
 BuildRequires : buildreq-R
 
@@ -49,13 +60,13 @@ lib components for the R-BayesFactor package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556486377
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562445021
 
 %install
-export SOURCE_DATE_EPOCH=1556486377
+export SOURCE_DATE_EPOCH=1562445021
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -84,7 +95,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
