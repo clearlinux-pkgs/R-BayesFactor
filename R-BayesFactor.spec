@@ -4,7 +4,7 @@
 #
 Name     : R-BayesFactor
 Version  : 0.9.12.4.2
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.2.tar.gz
 Summary  : Computation of Bayes Factors for Common Designs
@@ -13,9 +13,12 @@ License  : GPL-2.0
 Requires: R-BayesFactor-lib = %{version}-%{release}
 Requires: R-MatrixModels
 Requires: R-Rcpp
+Requires: R-RcppEigen
+Requires: R-arm
 Requires: R-coda
 Requires: R-gtools
 Requires: R-hypergeo
+Requires: R-languageR
 Requires: R-mvtnorm
 Requires: R-pbapply
 Requires: R-stringr
@@ -24,26 +27,18 @@ BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
 BuildRequires : R-arm
 BuildRequires : R-coda
-BuildRequires : R-contfrac
-BuildRequires : R-deSolve
-BuildRequires : R-elliptic
 BuildRequires : R-gtools
-BuildRequires : R-highr
 BuildRequires : R-hypergeo
 BuildRequires : R-languageR
 BuildRequires : R-mvtnorm
 BuildRequires : R-pbapply
-BuildRequires : R-stringi
 BuildRequires : R-stringr
-BuildRequires : R-xtable
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
--------------------------------------------------------------------
-Flat Shadow Social Media Icons
-by Lokas Software
-http://www.awicons.com/
+various Bayes factors for simple designs, including contingency tables,
+    one- and two-sample designs, one-way designs, general ANOVA designs, and
+    linear regression.
 
 %package lib
 Summary: lib components for the R-BayesFactor package.
@@ -55,21 +50,22 @@ lib components for the R-BayesFactor package.
 
 %prep
 %setup -q -c -n BayesFactor
+cd %{_builddir}/BayesFactor
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571798151
+export SOURCE_DATE_EPOCH=1589411684
 
 %install
-export SOURCE_DATE_EPOCH=1571798151
+export SOURCE_DATE_EPOCH=1589411684
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
