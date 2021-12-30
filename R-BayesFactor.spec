@@ -4,7 +4,7 @@
 #
 Name     : R-BayesFactor
 Version  : 0.9.12.4.3
-Release  : 37
+Release  : 38
 URL      : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.3.tar.gz
 Summary  : Computation of Bayes Factors for Common Designs
@@ -53,10 +53,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639422747
+export SOURCE_DATE_EPOCH=1640892642
 
 %install
-export SOURCE_DATE_EPOCH=1639422747
+export SOURCE_DATE_EPOCH=1640892642
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
