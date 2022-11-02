@@ -4,7 +4,7 @@
 #
 Name     : R-BayesFactor
 Version  : 0.9.12.4.4
-Release  : 45
+Release  : 46
 URL      : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BayesFactor_0.9.12-4.4.tar.gz
 Summary  : Computation of Bayes Factors for Common Designs
